@@ -5,6 +5,7 @@ int main()
 {
     int n;
     cout<<"Enter a Number\n";
+    cin>>n;
     if(n%2==0)
       cout<<"Ahaa ! Even Number\n";
     else
