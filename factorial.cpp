@@ -14,5 +14,6 @@ int main()
     }    
     cout<<"Factorial of Number is -:\n";
     cout<<fact;
+    
     return 0;
 }
