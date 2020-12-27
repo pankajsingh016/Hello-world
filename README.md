@@ -1,12 +1,5 @@
-# Hello-world
+# Hello-world :earth_americas: :milky_way:
 
-some Description!
-
-## So Here Basically I am Learing Git and Its Really Fun
-
-I m currently new to git.
-so ,just getting familiar with it and uploading some basic programs.
-1. index.cpp - containg the Hello world Program
-2. Oddeven.cpp -contain the Number of find whether it is odd or even
-3. Reverse.cpp - Will Find the Reverse of a Given Number
-4. Factorial.cpp- will give you the factorial of any number
+## Good to See you here
+Here, you can check my codes and efficient codes and ways to write program as always 
+Welcomed 
