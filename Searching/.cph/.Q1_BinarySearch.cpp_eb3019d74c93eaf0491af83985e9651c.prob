@@ -1,0 +1,1 @@
+{"name":"Local: Q1_BinarySearch","url":"e:\\Git\\Hello-world\\Searching\\Q1_BinarySearch.cpp","tests":[{"id":1622141553910,"input":"4\n5\n1 3 ","output":"1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Git\\Hello-world\\Searching\\Q1_BinarySearch.cpp","group":"local","local":true}
