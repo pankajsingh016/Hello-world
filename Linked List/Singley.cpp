@@ -135,7 +135,7 @@ int main()
 	while(1)
 	{
 			int a;
-			cout<<"------Menu-------"<<endl;
+			cout<<"------Menu Singly Linked List-------"<<endl;
 			cout<<"1. Insert at Head"<<endl;
 			cout<<"2. Insert at Tail"<<endl;
 			cout<<"3. Insert at Position"<<endl;
