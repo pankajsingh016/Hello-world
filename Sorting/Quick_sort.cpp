@@ -24,11 +24,12 @@ void Quick_sort(int ar[],int start, int end)    //end is always a pivot element
     {
         //finding correct position of piviot
         int fix = Divide(ar,start,end);    // Dividing the Array  (Fix represent the fix index whose value is at correct position)
-        return;
+        
         Quick_sort(ar,start,fix-1);    //left side ,dividing the values across the pivot and then calling 
         Quick_sort(ar,fix+1,end);     //Right side, 
 
     }
+    return;
 }
 
 int main()
