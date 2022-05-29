@@ -1,2 +1,0 @@
-This Thing you do in C++ 
-Checking the condition of end of file
