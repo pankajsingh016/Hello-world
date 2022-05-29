@@ -19,7 +19,7 @@
 ## Show Your Support by adding your name below 
 
 '''
-
+    Example: How to add your name
     1. [Your_name](your_github_url)
 
 '''
