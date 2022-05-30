@@ -1,0 +1,1 @@
+{"name":"Local: A","url":"e:\\The Dead Promise\\A\\A. Lights Out.cpp","tests":[{"id":1639761540368,"input":"1 0 1\n8 8 8\n2 0 3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\The Dead Promise\\A\\A. Lights Out.cpp","group":"local","local":true}

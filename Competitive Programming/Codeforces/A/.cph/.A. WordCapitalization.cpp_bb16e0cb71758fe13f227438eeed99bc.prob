@@ -1,0 +1,1 @@
+{"name":"Local: A","url":"e:\\The Dead Promise\\A\\A. WordCapitalization.cpp","tests":[{"id":1641382234358,"input":"ApPLe","output":""},{"id":1641382259266,"input":"konjac","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\The Dead Promise\\A\\A. WordCapitalization.cpp","group":"local","local":true}

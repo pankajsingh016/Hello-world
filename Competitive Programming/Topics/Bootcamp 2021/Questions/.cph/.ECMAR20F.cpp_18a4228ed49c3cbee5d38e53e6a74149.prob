@@ -1,0 +1,1 @@
+{"name":"Local: ECMAR20F","url":"e:\\The Dead Promise\\Topics\\Bootcamp 2021\\Questions\\ECMAR20F.cpp","tests":[{"id":1639491284653,"input":"4\n10 5\naabbccddef\n4 4\naaaa\n6 6\nabcdef\n8 5\ncbacbbac","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\The Dead Promise\\Topics\\Bootcamp 2021\\Questions\\ECMAR20F.cpp","group":"local","local":true}

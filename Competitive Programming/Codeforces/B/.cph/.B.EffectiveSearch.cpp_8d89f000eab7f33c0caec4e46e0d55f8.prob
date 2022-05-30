@@ -1,0 +1,1 @@
+{"name":"Local: B","url":"e:\\The Dead Promise\\B\\B.EffectiveSearch.cpp","tests":[{"id":1637333886295,"input":"3\n3 1 2\n3\n1 2 3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\The Dead Promise\\B\\B.EffectiveSearch.cpp","group":"local","local":true}
