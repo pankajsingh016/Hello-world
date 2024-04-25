@@ -1,0 +1,262 @@
+//EXP1 Birds Eye View
+
+1. CameraController.cs
+
+using UnityEngine;
+public class CameraController  MonoBehaviour
+{
+public float moveSpeed = 5f;
+void Update()
+{
+ Get input for camera movement
+float horizontal = Input.GetAxis(Horizontal);
+float vertical = Input.GetAxis(Vertical);
+ Calculate movement direction
+Vector3 movement = new Vector3(horizontal, 0, vertical).normalized;
+ Move the player in the camera's forward direction
+transform.Translate(movement  moveSpeed  Time.deltaTime);
+}
+}
+
+
+
+//EXP2 Linear Transform
+1. TransformExperiment.cs
+
+using UnityEngine;
+public class TransformExperiment : MonoBehaviour 
+{ 
+ // Start is called before the first frame update 
+ void Start() 
+ { 
+ // Initial position, rotation, and scale of the cube 
+ Vector3 initialPosition = new Vector3(0f, 1f, 0f); 
+ Quaternion initialRotation = Quaternion.identity; 
+ Vector3 initialScale = new Vector3(1f, 1f, 1f); 
+ // Apply the initial transformations to the cube 
+ transform.position = initialPosition; 
+ transform.rotation = initialRotation; 
+ transform.localScale = initialScale; 
+ // Perform linear transformations 
+ PerformLinearTransformations(); 
+ } 
+ void PerformLinearTransformations() 
+ { 
+ // Translate the cube along the x-axis 
+ transform.Translate(Vector3.right * 2f, Space.World); 
+ // Rotate the cube by 45 degrees around the y-axis 
+ transform.Rotate(Vector3.up, 45f, Space.World); 
+ // Scale the cube uniformly by 2 
+ transform.localScale = new Vector3(2f, 2f, 2f); 
+ } 
+}
+
+
+
+//EXP3 2D Rigid Body
+1. CustomTransformation.cs
+
+using UnityEngine;
+
+public class ObjectTransform : MonoBehaviour
+{
+    public float moveSpeed = 5f;
+    public float scaleSpeed = 0.1f;
+    public float rotationSpeed = 180f;
+
+    void Update()
+    {
+        // Translation (Movement)
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+        Vector3 translation = new Vector3(horizontalInput, verticalInput, 0f) * moveSpeed * Time.deltaTime;
+        transform.Translate(translation);
+
+        // Scaling
+        if (Input.GetKey(KeyCode.T)) // Press 'T' to scale up
+        {
+            ScaleObject(1f + scaleSpeed * Time.deltaTime);
+        }
+        else if (Input.GetKey(KeyCode.G)) // Press 'G' to scale down
+        {
+            ScaleObject(1f - scaleSpeed * Time.deltaTime);
+        }
+
+        // Rotation
+        if (Input.GetKey(KeyCode.U)) // Press 'U' to rotate counterclockwise
+        {
+            RotateObject(-rotationSpeed * Time.deltaTime);
+        }
+        else if (Input.GetKey(KeyCode.J)) // Press 'J' to rotate clockwise
+        {
+            RotateObject(rotationSpeed * Time.deltaTime);
+        }
+    }
+
+    void ScaleObject(float scaleFactor)
+    {
+        transform.localScale *= scaleFactor;
+    }
+
+    void RotateObject(float rotationAngle)
+    {
+        transform.Rotate(Vector3.forward, rotationAngle);
+    }
+}
+
+2. Rotation.cs
+using UnityEngine;
+
+public class RotationExample : MonoBehaviour
+{
+    public float rotationSpeed = 180f;
+
+    void Update()
+    {
+        // Rotation
+        float rotationInput = Input.GetAxis("Horizontal"); // Get rotation input from horizontal axis (A and D keys)
+        RotateObject(rotationInput);
+    }
+
+    void RotateObject(float rotationInput)
+    {
+        float rotationAmount = rotationInput * rotationSpeed * Time.deltaTime;
+        transform.Rotate(Vector3.forward * rotationAmount);
+    }
+}
+
+3. Scaling.cs
+using UnityEngine;
+
+public class ScalingExample : MonoBehaviour
+{
+    public float scaleSpeed = 1.2f;
+
+    void Update()
+    {
+        // Scale up with 'W' key
+        if (Input.GetKey(KeyCode.W))
+        {
+            ScaleObject(1);
+        }
+
+        // Scale down with 'S' key
+        if (Input.GetKey(KeyCode.S))
+        {
+            ScaleObject(-1);
+        }
+    }
+
+    void ScaleObject(int direction)
+    {
+        float scaleFactor = Mathf.Pow(scaleSpeed, direction * Time.deltaTime);
+        transform.localScale *= scaleFactor;
+    }
+}
+
+
+4. Translation.cs
+using UnityEngine;
+ public class TranslationExample : MonoBehaviour
+ {
+ public float moveSpeed = 5f;
+ void Update()
+ {
+ // Move horizontally and vertically based on user input
+ float horizontalInput = Input.GetAxis("Horizontal");
+ float verticalInput = Input.GetAxis("Vertical");
+
+ // Translate the object
+ Vector2 translation = new Vector2(horizontalInput, verticalInput) *
+moveSpeed * Time.deltaTime;
+ transform.Translate(translation);
+ }
+ }
+
+
+//EXP4 3D Rotations
+1. RotationExperiment.cs
+
+using UnityEngine;
+public class RotationExperiment : MonoBehaviour
+{
+ void Update()
+ {
+ // Rotate the cube using quaternion
+ transform.rotation *= Quaternion.Euler(0.5f, 1.0f, 0.2f);
+ // Convert quaternion to Euler angles
+//  Vector3 euler = transform.rotation.eulerAngles;
+//  Debug.Log("Euler Angles: " + euler);
+//  // Convert Euler angles back to quaternion
+//  Quaternion newRotation = Quaternion.Euler(euler);
+//  Debug.Log("Quaternion: " + newRotation);
+ }
+}
+
+
+//EXP5 Local vs Global Coordinate
+1. GlobalTransformExperiment.cs
+using UnityEngine;
+public class GlobalTransformExperiment : MonoBehaviour
+{
+ void Update()
+ {
+ // Move the cube globally
+ transform.Translate(Vector3.forward * 
+Time.deltaTime);
+} }
+
+2. HomogeneousTransformExperiment.cs
+using UnityEngine;
+public class HomogeneousTransformExperiment : MonoBehaviour
+{
+ void Update()
+ {
+ // Move the parent GameObject using homogeneous transformation
+ transform.Translate(Vector3.up * Time.deltaTime);
+ }
+}
+
+3. LocalTransformExperiment.cs
+using UnityEngine;
+public class LocalTransformExperiment : MonoBehaviour
+{
+ void Update()
+ {
+ // Move the cube locally
+ transform.Translate(Vector3.right * 
+Time.deltaTime); }
+}
+
+
+//EXP6
+1. ViewingTransformExperiment.cs
+using UnityEngine;
+public class ViewingTransformExperiment : 
+MonoBehaviour
+{
+ void Update()
+ {
+ // Example: Translate the camera forward
+ transform.Translate(Vector3.forward* 
+Time.deltaTime);
+ }
+}
+
+2. ViewingTransformExperiment2.cs
+using UnityEngine;
+ public class ViewingTransformExperiment2 : 
+MonoBehaviour
+ {
+ void Update()
+ {
+ // Example: Convert mouse position to world space
+ Vector3 mousePosition = Input.mousePosition;
+ mousePosition.z = 10; // Set a distance from the camera
+ Vector3 worldPosition = 
+Camera.main.ScreenToWorldPoint(mousePosition);
+ transform.position = worldPosition;
+ }
+ }
+
+
